@@ -16,9 +16,14 @@ class AddTransitionNameToContextListener implements EventSubscriberInterface
 
     public function addTransitionToContext(TransitionEvent $transitionEvent): void
     {
+        $transition = $transitionEvent->getTransition();
+        if (null === $transition) {
+            return;
+        }
+
         $transitionEvent->setContext(array_merge(
             $transitionEvent->getContext(),
-            ['_transitionName' => $transitionEvent->getTransition()->getName()]
+            ['_transitionName' => $transition->getName()]
         ));
     }
 }
