@@ -65,7 +65,7 @@ class AddUserToContextListenerTest extends TestCase
         ]);
 
         $security
-            ->expects(static::once())
+            ->expects($this->once())
             ->method('getUser')
             ->willReturn($user = static::createStub(UserInterface::class))
         ;
