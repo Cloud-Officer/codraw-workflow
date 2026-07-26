@@ -37,6 +37,6 @@
         }
     },
     "replace": {
-        "codraw/workflow": "self.version"
+        "draw/workflow": "self.version"
     }
 }
